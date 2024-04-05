@@ -37,3 +37,17 @@ def write_words_in_file(file_path: str, most_common_words: list):
     with open(file_path, 'w', encoding='utf-8') as file:
         for word, count in most_common_words:
             file.write(f"{word}-{count}\n")
+
+def main():
+    """
+    Main function to execute the script.
+    """
+    input_file_path = "input.txt"
+    output_file_path = "output.txt"
+
+    most_common_words = get_most_common_words(input_file_path)
+
+    write_words_in_file(output_file_path, most_common_words)
+
+if __name__ == "__main__":
+    main()
