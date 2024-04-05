@@ -25,3 +25,15 @@ def get_most_common_words(file_path: str, n: int = 10):
     most_common_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)[:n]
 
     return most_common_words
+
+def write_words_in_file(file_path: str, most_common_words: list):
+    """
+    Write the most common words and their counts to a text file.
+
+    Args:
+        file_path (str): The path to the output text file.
+        most_common_words (list): A list of tuples containing the most common words and their counts.
+    """
+    with open(file_path, 'w', encoding='utf-8') as file:
+        for word, count in most_common_words:
+            file.write(f"{word}-{count}\n")
